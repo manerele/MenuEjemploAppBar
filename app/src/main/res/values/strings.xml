@@ -3,4 +3,7 @@
 
     <!-- Main menu -->
     <string name="lanzador">Lanzador</string>
+    <string name="lanzador_2">Lanzador2</string>
+    <string name="lanzador_3">Lanzador3</string>
+    <string name="rojito">Rojito</string>
 </resources>
