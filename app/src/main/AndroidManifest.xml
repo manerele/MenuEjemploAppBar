@@ -19,7 +19,18 @@
         <activity
             android:name=".SeccionesActivity"
             android:label="@string/title_activity_secciones"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <!-- Añadimos esto para que se soporten veriones anteriores -->
+            <!-- SE obtiene de la url -->
+            <!-- https://developer.android.com/training/implementing-navigation/ancestral -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
     </application>
 
 </manifest>
