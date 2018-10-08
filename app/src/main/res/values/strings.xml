@@ -6,4 +6,7 @@
     <string name="lanzador_2">Lanzador2</string>
     <string name="lanzador_3">Lanzador3</string>
     <string name="rojito">Rojito</string>
+    <string name="title_activity_secciones">SeccionesActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
