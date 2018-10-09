@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,9 @@ public class SeccionesActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    final static int INSERTAR = 1;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -116,12 +119,26 @@ public class SeccionesActivity extends AppCompatActivity {
         }
 
         @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            setHasOptionsMenu(true);
+            super.onCreate(savedInstanceState);
+        }
+
+        @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_secciones, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
+        }
+
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+            MenuItem menuItem = menu.add(Menu.NONE, INSERTAR, Menu.NONE, "Insertar");
+            menuItem.setIcon(R.drawable.ic_mas);
+            menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            super.onCreateOptionsMenu(menu, inflater);
         }
     }
 
