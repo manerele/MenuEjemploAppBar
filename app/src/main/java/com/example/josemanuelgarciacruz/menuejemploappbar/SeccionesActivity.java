@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SeccionesActivity extends AppCompatActivity {
 
@@ -150,6 +151,14 @@ public class SeccionesActivity extends AppCompatActivity {
             menuItem.setIcon(R.drawable.ic_mas);
             menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
             super.onCreateOptionsMenu(menu, inflater);
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            if (item.getItemId() == INSERTAR){
+                Toast.makeText(getContext(), "Acabas de pulsar INSERTAR", Toast.LENGTH_SHORT).show();
+            }
+            return true;
         }
     }
 
