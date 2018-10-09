@@ -158,7 +158,7 @@ public class SeccionesActivity extends AppCompatActivity {
             if (item.getItemId() == INSERTAR){
                 Toast.makeText(getContext(), "Acabas de pulsar INSERTAR", Toast.LENGTH_SHORT).show();
             }
-            return true;
+            return super.onOptionsItemSelected(item);
         }
     }
 
