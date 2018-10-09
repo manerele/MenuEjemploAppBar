@@ -102,6 +102,7 @@ public class SeccionesActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private int seccion;
 
         public PlaceholderFragment() {
         }
@@ -120,7 +121,17 @@ public class SeccionesActivity extends AppCompatActivity {
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
-            setHasOptionsMenu(true);
+            seccion = getArguments().getInt(ARG_SECTION_NUMBER);
+
+            switch (seccion){
+                case 1:
+                    setHasOptionsMenu(true);
+                    break;
+                default:
+                    setHasOptionsMenu(false);
+                    break;
+            }
+
             super.onCreate(savedInstanceState);
         }
 
